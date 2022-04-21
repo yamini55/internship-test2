@@ -1,0 +1,1015 @@
+import pandas as pd
+import numpy as np
+data = pd.read_csv(r'C:\Users\YAMINI\Desktop\main.csv')
+data[0:30]
+product_code	product_description	product_group	sales_date	price	sales_quantity	unit
+0	1001	tomato	vegetable	2021-11-01	2.99	36	kg
+1	1001	tomato	vegetable	2021-11-02	2.99	23	kg
+2	1001	tomato	vegetable	2021-11-03	2.99	34	kg
+3	1001	tomato	vegetable	2021-11-04	2.99	23	kg
+4	1001	tomato	vegetable	2021-11-05	2.99	34	kg
+5	1001	tomato	vegetable	2021-11-06	2.99	20	kg
+6	1001	tomato	vegetable	2021-11-07	2.99	21	kg
+7	1001	tomato	vegetable	2021-11-08	2.99	20	kg
+8	1001	tomato	vegetable	2021-11-09	2.99	31	kg
+9	1001	tomato	vegetable	2021-11-10	2.99	34	kg
+10	1001	tomato	vegetable	2021-11-11	NaN	20	kg
+11	1001	tomato	vegetable	2021-11-12	2.99	22	kg
+12	1001	tomato	vegetable	2021-11-13	2.99	26	kg
+13	1001	tomato	vegetable	2021-11-14	2.99	38	kg
+14	1001	tomato	vegetable	2021-11-15	3.49	38	kg
+15	1001	tomato	vegetable	2021-11-16	3.49	28	kg
+16	1001	tomato	vegetable	2021-11-17	3.49	29	kg
+17	1001	tomato	vegetable	2021-11-18	3.49	36	kg
+18	1001	tomato	vegetable	2021-11-19	3.49	37	kg
+19	1001	tomato	vegetable	2021-11-20	3.49	27	kg
+20	1001	tomato	vegetable	2021-11-21	3.49	22	kg
+21	1001	tomato	vegetable	2021-11-22	3.49	22	kg
+22	1001	tomato	vegetable	2021-11-23	3.49	30	kg
+23	1001	tomato	vegetable	2021-11-24	2.89	39	kg
+24	1001	tomato	vegetable	2021-11-25	2.89	25	kg
+25	1001	tomato	vegetable	2021-11-26	2.89	21	kg
+26	1001	tomato	vegetable	2021-11-27	2.89	38	kg
+27	1001	tomato	vegetable	2021-11-28	2.89	26	kg
+28	1001	tomato	vegetable	2021-11-29	2.89	24	kg
+29	1001	tomato	vegetable	2021-11-30	2.89	21	kg
+30
+tomato=df.head(30)
+print(tomato)
+    product_code product_description product_group  sales_date  price  \
+0           1001              tomato     vegetable  2021-11-01   2.99   
+1           1001              tomato     vegetable  2021-11-02   2.99   
+2           1001              tomato     vegetable  2021-11-03   2.99   
+3           1001              tomato     vegetable  2021-11-04   2.99   
+4           1001              tomato     vegetable  2021-11-05   2.99   
+5           1001              tomato     vegetable  2021-11-06   2.99   
+6           1001              tomato     vegetable  2021-11-07   2.99   
+7           1001              tomato     vegetable  2021-11-08   2.99   
+8           1001              tomato     vegetable  2021-11-09   2.99   
+9           1001              tomato     vegetable  2021-11-10   2.99   
+10          1001              tomato     vegetable  2021-11-11    NaN   
+11          1001              tomato     vegetable  2021-11-12   2.99   
+12          1001              tomato     vegetable  2021-11-13   2.99   
+13          1001              tomato     vegetable  2021-11-14   2.99   
+14          1001              tomato     vegetable  2021-11-15   3.49   
+15          1001              tomato     vegetable  2021-11-16   3.49   
+16          1001              tomato     vegetable  2021-11-17   3.49   
+17          1001              tomato     vegetable  2021-11-18   3.49   
+18          1001              tomato     vegetable  2021-11-19   3.49   
+19          1001              tomato     vegetable  2021-11-20   3.49   
+20          1001              tomato     vegetable  2021-11-21   3.49   
+21          1001              tomato     vegetable  2021-11-22   3.49   
+22          1001              tomato     vegetable  2021-11-23   3.49   
+23          1001              tomato     vegetable  2021-11-24   2.89   
+24          1001              tomato     vegetable  2021-11-25   2.89   
+25          1001              tomato     vegetable  2021-11-26   2.89   
+26          1001              tomato     vegetable  2021-11-27   2.89   
+27          1001              tomato     vegetable  2021-11-28   2.89   
+28          1001              tomato     vegetable  2021-11-29   2.89   
+29          1001              tomato     vegetable  2021-11-30   2.89   
+
+    sales_quantity unit  
+0               36   kg  
+1               23   kg  
+2               34   kg  
+3               23   kg  
+4               34   kg  
+5               20   kg  
+6               21   kg  
+7               20   kg  
+8               31   kg  
+9               34   kg  
+10              20   kg  
+11              22   kg  
+12              26   kg  
+13              38   kg  
+14              38   kg  
+15              28   kg  
+16              29   kg  
+17              36   kg  
+18              37   kg  
+19              27   kg  
+20              22   kg  
+21              22   kg  
+22              30   kg  
+23              39   kg  
+24              25   kg  
+25              21   kg  
+26              38   kg  
+27              26   kg  
+28              24   kg  
+29              21   kg  
+tomato.replace(to_replace=np.nan, value=3.017)
+tomato.replace(to_replace=np.nanproduct_code	product_description	product_group	sales_date	price	sales_quantity	unit
+0	1001	tomato	vegetable	2021-11-01	2.99	36	kg
+1	1001	tomato	vegetable	2021-11-02	2.99	23	kg
+2	1001	tomato	vegetable	2021-11-03	2.99	34	kg
+3	1001	tomato	vegetable	2021-11-04	2.99	23	kg
+4	1001	tomato	vegetable	2021-11-05	2.99	34	kg
+5	1001	tomato	vegetable	2021-11-06	2.99	20	kg
+6	1001	tomato	vegetable	2021-11-07	2.99	21	kg
+7	1001	tomato	vegetable	2021-11-08	2.99	20	kg
+8	1001	tomato	vegetable	2021-11-09	2.99	31	kg
+9	1001	tomato	vegetable	2021-11-10	2.99	34	kg
+10	1001	tomato	vegetable	2021-11-11	NaN	20	kg
+11	1001	tomato	vegetable	2021-11-12	2.99	22	kg
+12	1001	tomato	vegetable	2021-11-13	2.99	26	kg
+13	1001	tomato	vegetable	2021-11-14	2.99	38	kg
+14	1001	tomato	vegetable	2021-11-15	3.49	38	kg
+15	1001	tomato	vegetable	2021-11-16	3.49	28	kg
+16	1001	tomato	vegetable	2021-11-17	3.49	29	kg
+17	1001	tomato	vegetable	2021-11-18	3.49	36	kg
+18	1001	tomato	vegetable	2021-11-19	3.49	37	kg
+19	1001	tomato	vegetable	2021-11-20	3.49	27	kg
+20	1001	tomato	vegetable	2021-11-21	3.49	22	kg
+21	1001	tomato	vegetable	2021-11-22	3.49	22	kg
+22	1001	tomato	vegetable	2021-11-23	3.49	30	kg
+23	1001	tomato	vegetable	2021-11-24	2.89	39	kg
+24	1001	tomato	vegetable	2021-11-25	2.89	25	kg
+25	1001	tomato	vegetable	2021-11-26	2.89	21	kg
+26	1001	tomato	vegetable	2021-11-27	2.89	38	kg
+27	1001	tomato	vegetable	2021-11-28	2.89	26	kg
+28	1001	tomato	vegetable	2021-11-29	2.89	24	kg
+29	1001	tomato	vegetable	2021-11-30	2.89	21	kg
+30
+tomato=df.head(30)
+print(tomato)
+    product_code product_description product_group  sales_date  price  \
+0           1001              tomato     vegetable  2021-11-01   2.99   
+1           1001              tomato     vegetable  2021-11-02   2.99   
+2           1001              tomato     vegetable  2021-11-03   2.99   
+3           1001              tomato     vegetable  2021-11-04   2.99   
+4           1001              tomato     vegetable  2021-11-05   2.99   
+5           1001              tomato     vegetable  2021-11-06   2.99   
+6           1001              tomato     vegetable  2021-11-07   2.99   
+7           1001              tomato     vegetable  2021-11-08   2.99   
+8           1001              tomato     vegetable  2021-11-09   2.99   
+9           1001              tomato     vegetable  2021-11-10   2.99   
+10          1001              tomato     vegetable  2021-11-11    NaN   
+11          1001              tomato     vegetable  2021-11-12   2.99   
+12          1001              tomato     vegetable  2021-11-13   2.99   
+13          1001              tomato     vegetable  2021-11-14   2.99   
+14          1001              tomato     vegetable  2021-11-15   3.49   
+15          1001              tomato     vegetable  2021-11-16   3.49   
+16          1001              tomato     vegetable  2021-11-17   3.49   
+17          1001              tomato     vegetable  2021-11-18   3.49   
+18          1001              tomato     vegetable  2021-11-19   3.49   
+19          1001              tomato     vegetable  2021-11-20   3.49   
+20          1001              tomato     vegetable  2021-11-21   3.49   
+21          1001              tomato     vegetable  2021-11-22   3.49   
+22          1001              tomato     vegetable  2021-11-23   3.49   
+23          1001              tomato     vegetable  2021-11-24   2.89   
+24          1001              tomato     vegetable  2021-11-25   2.89   
+25          1001              tomato     vegetable  2021-11-26   2.89   
+26          1001              tomato     vegetable  2021-11-27   2.89   
+27          1001              tomato     vegetable  2021-11-28   2.89   
+28          1001              tomato     vegetable  2021-11-29   2.89   
+29          1001              tomato     vegetable  2021-11-30   2.89   
+
+    sales_quantity unit  
+0               36   kg  
+1               23   kg  
+2               34   kg  
+3               23   kg  
+4               34   kg  
+5               20   kg  
+6               21   kg  
+7               20   kg  
+8               31   kg  
+9               34   kg  
+10              20   kg  
+11              22   kg  
+12              26   kg  
+13              38   kg  
+14              38   kg  
+15              28   kg  
+16              29   kg  
+17              36   kg  
+18              37   kg  
+19              27   kg  
+20              22   kg  
+21              22   kg  
+22              30   kg  
+23              39   kg  
+24              25   kg  
+25              21   kg  
+26              38   kg  
+27              26   kg  
+28              24   kg  
+29              21   kg  
+tomato.replace(to_replace=np.nan, value=3.017)
+	product_code	product_description	product_group	sales_date	price	sales_quantity	unit
+0	1001	tomato	vegetable	2021-11-01	2.990	36	kg
+1	1001	tomato	vegetable	2021-11-02	2.990	23	kg
+2	1001	tomato	vegetable	2021-11-03	2.990	34	kg
+3	1001	tomato	vegetable	2021-11-04	2.990	23	kg
+4	1001	tomato	vegetable	2021-11-05	2.990	34	kg
+5	1001	tomato	vegetable	2021-11-06	2.990	20	kg
+6	1001	tomato	vegetable	2021-11-07	2.990	21	kg
+7	1001	tomato	vegetable	2021-11-08	2.990	20	kg
+8	1001	tomato	vegetable	2021-11-09	2.990	31	kg
+9	1001	tomato	vegetable	2021-11-10	2.990	34	kg
+10	1001	tomato	vegetable	2021-11-11	3.017	20	kg
+11	1001	tomato	vegetable	2021-11-12	2.990	22	kg
+12	1001	tomato	vegetable	2021-11-13	2.990	26	kg
+13	1001	tomato	vegetable	2021-11-14	2.990	38	kg
+14	1001	tomato	vegetable	2021-11-15	3.490	38	kg
+15	1001	tomato	vegetable	2021-11-16	3.490	28	kg
+16	1001	tomato	vegetable	2021-11-17	3.490	29	kg
+17	1001	tomato	vegetable	2021-11-18	3.490	36	kg
+18	1001	tomato	vegetable	2021-11-19	3.490	37	kg
+19	1001	tomato	vegetable	2021-11-20	3.490	27	kg
+20	1001	tomato	vegetable	2021-11-21	3.490	22	kg
+21	1001	tomato	vegetable	2021-11-22	3.490	22	kg
+22	1001	tomato	vegetable	2021-11-23	3.490	30	kg
+23	1001	tomato	vegetable	2021-11-24	2.890	39	kg
+24	1001	tomato	vegetable	2021-11-25	2.890	25	kg
+25	1001	tomato	vegetable	2021-11-26	2.890	21	kg
+26	1001	tomato	vegetable	2021-11-27	2.890	38	kg
+27	1001	tomato	vegetable	2021-11-28	2.890	26	kg
+28	1001	tomato	vegetable	2021-11-29	2.890	24	kg
+29	1001	tomato	vegetable	2021-11-30	2.890	21	kg
+cucumber=df.loc[30:59]
+print(cucumber)
+product_code product_description product_group  sales_date  price  \
+30          1002            cucumber     vegetable  2021-11-01   4.29   
+31          1002            cucumber     vegetable  2021-11-02   4.29   
+32          1002            cucumber     vegetable  2021-11-03   4.29   
+33          1002            cucumber     vegetable  2021-11-04   4.29   
+34          1002            cucumber     vegetable  2021-11-05    NaN   
+35          1002            cucumber     vegetable  2021-11-06   4.29   
+36          1002            cucumber     vegetable  2021-11-07   4.29   
+37          1002            cucumber     vegetable  2021-11-08    NaN   
+38          1002            cucumber     vegetable  2021-11-09   4.49   
+39          1002            cucumber     vegetable  2021-11-10   4.49   
+40          1002            cucumber     vegetable  2021-11-11   4.49   
+41          1002            cucumber     vegetable  2021-11-12   4.49   
+42          1002            cucumber     vegetable  2021-11-13   4.49   
+43          1002            cucumber     vegetable  2021-11-14   4.49   
+44          1002            cucumber     vegetable  2021-11-15   4.49   
+45          1002            cucumber     vegetable  2021-11-16   4.49   
+46          1002            cucumber     vegetable  2021-11-17   4.49   
+47          1002            cucumber     vegetable  2021-11-18   4.49   
+48          1002            cucumber     vegetable  2021-11-19   4.69   
+49          1002            cucumber     vegetable  2021-11-20   4.69   
+50          1002            cucumber     vegetable  2021-11-21   4.69   
+51          1002            cucumber     vegetable  2021-11-22   4.69   
+52          1002            cucumber     vegetable  2021-11-23   4.69   
+53          1002            cucumber     vegetable  2021-11-24   4.69   
+54          1002            cucumber     vegetable  2021-11-25   4.69   
+55          1002            cucumber     vegetable  2021-11-26   4.69   
+56          1002            cucumber     vegetable  2021-11-27   4.69   
+57          1002            cucumber     vegetable  2021-11-28   4.69   
+58          1002            cucumber     vegetable  2021-11-29   4.69   
+59          1002            cucumber     vegetable  2021-11-30   4.69   
+
+    sales_quantity unit  
+30              22   kg  
+31              20   kg  
+32              37   kg  
+33              30   kg  
+34              24   kg  
+35              36   kg  
+36              20   kg  
+37              38   kg  
+38              25   kg  
+39              33   kg  
+40              24   kg  
+41              29   kg  
+42              25   kg  
+43              38   kg  
+44              28   kg  
+45              27   kg  
+46              34   kg  
+47              21   kg  
+48              32   kg  
+49              28   kg  
+50              31   kg  
+51              24   kg  
+52              32   kg  
+53              37   kg  
+54              35   kg  
+55              27   kg  
+56              37   kg  
+57              23   kg  
+58              38   kg  
+59              20   kg  
+cucumber.replace(to_replace=np.nan, value=4.375)
+product_code	product_description	product_group	sales_date	price	sales_quantity	unit
+30	1002	cucumber	vegetable	2021-11-01	4.290	22	kg
+31	1002	cucumber	vegetable	2021-11-02	4.290	20	kg
+32	1002	cucumber	vegetable	2021-11-03	4.290	37	kg
+33	1002	cucumber	vegetable	2021-11-04	4.290	30	kg
+34	1002	cucumber	vegetable	2021-11-05	4.375	24	kg
+35	1002	cucumber	vegetable	2021-11-06	4.290	36	kg
+36	1002	cucumber	vegetable	2021-11-07	4.290	20	kg
+37	1002	cucumber	vegetable	2021-11-08	4.375	38	kg
+38	1002	cucumber	vegetable	2021-11-09	4.490	25	kg
+39	1002	cucumber	vegetable	2021-11-10	4.490	33	kg
+40	1002	cucumber	vegetable	2021-11-11	4.490	24	kg
+41	1002	cucumber	vegetable	2021-11-12	4.490	29	kg
+42	1002	cucumber	vegetable	2021-11-13	4.490	25	kg
+43	1002	cucumber	vegetable	2021-11-14	4.490	38	kg
+44	1002	cucumber	vegetable	2021-11-15	4.490	28	kg
+45	1002	cucumber	vegetable	2021-11-16	4.490	27	kg
+46	1002	cucumber	vegetable	2021-11-17	4.490	34	kg
+47	1002	cucumber	vegetable	2021-11-18	4.490	21	kg
+48	1002	cucumber	vegetable	2021-11-19	4.690	32	kg
+49	1002	cucumber	vegetable	2021-11-20	4.690	28	kg
+50	1002	cucumber	vegetable	2021-11-21	4.690	31	kg
+51	1002	cucumber	vegetable	2021-11-22	4.690	24	kg
+52	1002	cucumber	vegetable	2021-11-23	4.690	32	kg
+53	1002	cucumber	vegetable	2021-11-24	4.690	37	kg
+54	1002	cucumber	vegetable	2021-11-25	4.690	35	kg
+55	1002	cucumber	vegetable	2021-11-26	4.690	27	kg
+56	1002	cucumber	vegetable	2021-11-27	4.690	37	kg
+57	1002	cucumber	vegetable	2021-11-28	4.690	23	kg
+58	1002	cucumber	vegetable	2021-11-29	4.690	38	kg
+59	1002	cucumber	vegetable	2021-11-30	4.690	20	kg
+onion
+onion=df.loc[60:89]
+onion
+print(onion)
+    product_code product_description product_group  sales_date  price  \
+60          1003               onion     vegetable  2021-11-01   2.29   
+61          1003               onion     vegetable  2021-11-02   2.29   
+62          1003               onion     vegetable  2021-11-03   2.29   
+63          1003               onion     vegetable  2021-11-04   2.29   
+64          1003               onion     vegetable  2021-11-05   2.29   
+65          1003               onion     vegetable  2021-11-06   2.29   
+66          1003               onion     vegetable  2021-11-07   2.29   
+67          1003               onion     vegetable  2021-11-08   2.29   
+68          1003               onion     vegetable  2021-11-09   2.29   
+69          1003               onion     vegetable  2021-11-10   1.99   
+70          1003               onion     vegetable  2021-11-11   1.99   
+71          1003               onion     vegetable  2021-11-12   1.99   
+72          1003               onion     vegetable  2021-11-13   1.99   
+73          1003               onion     vegetable  2021-11-14    NaN   
+74          1003               onion     vegetable  2021-11-15    NaN   
+75          1003               onion     vegetable  2021-11-16   1.99   
+76          1003               onion     vegetable  2021-11-17   1.99   
+77          1003               onion     vegetable  2021-11-18   1.99   
+78          1003               onion     vegetable  2021-11-19   1.99   
+79          1003               onion     vegetable  2021-11-20   1.99   
+80          1003               onion     vegetable  2021-11-21   1.99   
+81          1003               onion     vegetable  2021-11-22   1.99   
+82          1003               onion     vegetable  2021-11-23   1.99   
+83          1003               onion     vegetable  2021-11-24   1.99   
+84          1003               onion     vegetable  2021-11-25   2.29   
+85          1003               onion     vegetable  2021-11-26   2.29   
+86          1003               onion     vegetable  2021-11-27   2.29   
+87          1003               onion     vegetable  2021-11-28   2.29   
+88          1003               onion     vegetable  2021-11-29   2.29   
+89          1003               onion     vegetable  2021-11-30   2.29   
+
+    sales_quantity unit  
+60              29   kg  
+61              22   kg  
+62              33   kg  
+63              27   kg  
+64              35   kg  
+65              29   kg  
+66              38   kg  
+67              27   kg  
+68              34   kg  
+69              26   kg  
+70              23   kg  
+71              39   kg  
+72              26   kg  
+73              39   kg  
+74              25   kg  
+75              21   kg  
+76              38   kg  
+77              21   kg  
+78              38   kg  
+79              30   kg  
+80              28   kg  
+81              25   kg  
+82              23   kg  
+83              23   kg  
+84              24   kg  
+85              28   kg  
+86              25   kg  
+87              38   kg  
+88              21   kg  
+89              27   kg  
+onion.replace(to_replace=np.nan, value=2.076)
+onion.replace(to_replace=np.nan, value=2.076)
+product_code	product_description	product_group	sales_date	price	sales_quantity	unit
+60	1003	onion	vegetable	2021-11-01	2.290	29	kg
+61	1003	onion	vegetable	2021-11-02	2.290	22	kg
+62	1003	onion	vegetable	2021-11-03	2.290	33	kg
+63	1003	onion	vegetable	2021-11-04	2.290	27	kg
+64	1003	onion	vegetable	2021-11-05	2.290	35	kg
+65	1003	onion	vegetable	2021-11-06	2.290	29	kg
+66	1003	onion	vegetable	2021-11-07	2.290	38	kg
+67	1003	onion	vegetable	2021-11-08	2.290	27	kg
+68	1003	onion	vegetable	2021-11-09	2.290	34	kg
+69	1003	onion	vegetable	2021-11-10	1.990	26	kg
+70	1003	onion	vegetable	2021-11-11	1.990	23	kg
+71	1003	onion	vegetable	2021-11-12	1.990	39	kg
+72	1003	onion	vegetable	2021-11-13	1.990	26	kg
+73	1003	onion	vegetable	2021-11-14	2.076	39	kg
+74	1003	onion	vegetable	2021-11-15	2.076	25	kg
+75	1003	onion	vegetable	2021-11-16	1.990	21	kg
+76	1003	onion	vegetable	2021-11-17	1.990	38	kg
+77	1003	onion	vegetable	2021-11-18	1.990	21	kg
+78	1003	onion	vegetable	2021-11-19	1.990	38	kg
+79	1003	onion	vegetable	2021-11-20	1.990	30	kg
+80	1003	onion	vegetable	2021-11-21	1.990	28	kg
+81	1003	onion	vegetable	2021-11-22	1.990	25	kg
+82	1003	onion	vegetable	2021-11-23	1.990	23	kg
+83	1003	onion	vegetable	2021-11-24	1.990	23	kg
+84	1003	onion	vegetable	2021-11-25	2.290	24	kg
+85	1003	onion	vegetable	2021-11-26	2.290	28	kg
+86	1003	onion	vegetable	2021-11-27	2.290	25	kg
+87	1003	onion	vegetable	2021-11-28	2.290	38	kg
+88	1003	onion	vegetable	2021-11-29	2.290	21	kg
+89	1003	onion	vegetable	2021-11-30	2.290	27	kg
+plum=df.loc[90:119]
+print(plum)
+ product_code product_description product_group  sales_date  price  \
+90           1101                plum         fruit  2021-11-01    4.5   
+91           1101                plum         fruit  2021-11-02    4.5   
+92           1101                plum         fruit  2021-11-03    4.5   
+93           1101                plum         fruit  2021-11-04    4.5   
+94           1101                plum         fruit  2021-11-05    4.5   
+95           1101                plum         fruit  2021-11-06    4.5   
+96           1101                plum         fruit  2021-11-07    4.5   
+97           1101                plum         fruit  2021-11-08    4.5   
+98           1101                plum         fruit  2021-11-09    4.5   
+99           1101                plum         fruit  2021-11-10    NaN   
+100          1101                plum         fruit  2021-11-11    4.5   
+101          1101                plum         fruit  2021-11-12    4.5   
+102          1101                plum         fruit  2021-11-13    4.5   
+103          1101                plum         fruit  2021-11-14    4.5   
+104          1101                plum         fruit  2021-11-15    4.7   
+105          1101                plum         fruit  2021-11-16    4.7   
+106          1101                plum         fruit  2021-11-17    4.7   
+107          1101                plum         fruit  2021-11-18    4.7   
+108          1101                plum         fruit  2021-11-19    4.7   
+109          1101                plum         fruit  2021-11-20    4.7   
+110          1101                plum         fruit  2021-11-21    4.7   
+111          1101                plum         fruit  2021-11-22    4.7   
+112          1101                plum         fruit  2021-11-23    3.9   
+113          1101                plum         fruit  2021-11-24    3.9   
+114          1101                plum         fruit  2021-11-25    3.9   
+115          1101                plum         fruit  2021-11-26    3.9   
+116          1101                plum         fruit  2021-11-27    3.9   
+117          1101                plum         fruit  2021-11-28    3.9   
+118          1101                plum         fruit  2021-11-29    3.9   
+119          1101                plum         fruit  2021-11-30    3.9   
+
+     sales_quantity unit  
+90               27   kg  
+91               33   kg  
+92               37   kg  
+93               33   kg  
+94               30   kg  
+95               22   kg  
+96               38   kg  
+97               22   kg  
+98               22   kg  
+99               36   kg  
+100              34   kg  
+101              32   kg  
+102              36   kg  
+103              32   kg  
+104              24   kg  
+105              34   kg  
+106              22   kg  
+107              39   kg  
+108              31   kg  
+109              21   kg  
+110              22   kg  
+111              31   kg  
+112              32   kg  
+113              29   kg  
+114              24   kg  
+115              34   kg  
+116              24   kg  
+117              21   kg  
+118              32   kg  
+119              29   kg  
+plum.replace(to_replace=np.nan, value=3.314)
+	product_code	product_description	product_group	sales_date	price	sales_quantity	unit
+90	1101	plum	fruit	2021-11-01	4.500	27	kg
+91	1101	plum	fruit	2021-11-02	4.500	33	kg
+92	1101	plum	fruit	2021-11-03	4.500	37	kg
+93	1101	plum	fruit	2021-11-04	4.500	33	kg
+94	1101	plum	fruit	2021-11-05	4.500	30	kg
+95	1101	plum	fruit	2021-11-06	4.500	22	kg
+96	1101	plum	fruit	2021-11-07	4.500	38	kg
+97	1101	plum	fruit	2021-11-08	4.500	22	kg
+98	1101	plum	fruit	2021-11-09	4.500	22	kg
+99	1101	plum	fruit	2021-11-10	3.314	36	kg
+100	1101	plum	fruit	2021-11-11	4.500	34	kg
+101	1101	plum	fruit	2021-11-12	4.500	32	kg
+102	1101	plum	fruit	2021-11-13	4.500	36	kg
+103	1101	plum	fruit	2021-11-14	4.500	32	kg
+104	1101	plum	fruit	2021-11-15	4.700	24	kg
+105	1101	plum	fruit	2021-11-16	4.700	34	kg
+106	1101	plum	fruit	2021-11-17	4.700	22	kg
+107	1101	plum	fruit	2021-11-18	4.700	39	kg
+108	1101	plum	fruit	2021-11-19	4.700	31	kg
+109	1101	plum	fruit	2021-11-20	4.700	21	kg
+110	1101	plum	fruit	2021-11-21	4.700	22	kg
+111	1101	plum	fruit	2021-11-22	4.700	31	kg
+112	1101	plum	fruit	2021-11-23	3.900	32	kg
+113	1101	plum	fruit	2021-11-24	3.900	29	kg
+114	1101	plum	fruit	2021-11-25	3.900	24	kg
+115	1101	plum	fruit	2021-11-26	3.900	34	kg
+116	1101	plum	fruit	2021-11-27	3.900	24	kg
+117	1101	plum	fruit	2021-11-28	3.900	21	kg
+118	1101	plum	fruit	2021-11-29	3.900	32	kg
+119	1101	plum	fruit	2021-11-30	3.900	29	kg
+4
+orange=df.loc[120:149]
+print(orange)
+     product_code product_description product_group  sales_date  price  \
+120          1102              orange         fruit  2021-11-01    2.6   
+121          1102              orange         fruit  2021-11-02    2.6   
+122          1102              orange         fruit  2021-11-03    2.6   
+123          1102              orange         fruit  2021-11-04    2.6   
+124          1102              orange         fruit  2021-11-05    2.6   
+125          1102              orange         fruit  2021-11-06    2.6   
+126          1102              orange         fruit  2021-11-07    2.6   
+127          1102              orange         fruit  2021-11-08    NaN   
+128          1102              orange         fruit  2021-11-09    2.6   
+129          1102              orange         fruit  2021-11-10    2.6   
+130          1102              orange         fruit  2021-11-11    2.6   
+131          1102              orange         fruit  2021-11-12    2.6   
+132          1102              orange         fruit  2021-11-13    2.6   
+133          1102              orange         fruit  2021-11-14    2.9   
+134          1102              orange         fruit  2021-11-15    2.9   
+135          1102              orange         fruit  2021-11-16    2.9   
+136          1102              orange         fruit  2021-11-17    2.9   
+137          1102              orange         fruit  2021-11-18    2.9   
+138          1102              orange         fruit  2021-11-19    2.9   
+139          1102              orange         fruit  2021-11-20    2.9   
+140          1102              orange         fruit  2021-11-21    2.9   
+141          1102              orange         fruit  2021-11-22    NaN   
+142          1102              orange         fruit  2021-11-23    2.7   
+143          1102              orange         fruit  2021-11-24    2.7   
+144          1102              orange         fruit  2021-11-25    2.7   
+145          1102              orange         fruit  2021-11-26    2.7   
+146          1102              orange         fruit  2021-11-27    2.7   
+147          1102              orange         fruit  2021-11-28    2.7   
+148          1102              orange         fruit  2021-11-29    2.7   
+149          1102              orange         fruit  2021-11-30    2.7   
+
+     sales_quantity unit  
+120              37   kg  
+121              21   kg  
+122              35   kg  
+123              37   kg  
+124              36   kg  
+125              37   kg  
+126              29   kg  
+127              28   kg  
+128              31   kg  
+129              39   kg  
+130              32   kg  
+131              30   kg  
+132              26   kg  
+133              28   kg  
+134              23   kg  
+135              28   kg  
+136              29   kg  
+137              29   kg  
+138              26   kg  
+139              34   kg  
+140              28   kg  
+141              38   kg  
+142              30   kg  
+143              34   kg  
+144              29   kg  
+145              25   kg  
+146              28   kg  
+147              27   kg  
+148              21   kg  
+149              33   kg  
+orange.replace(to_replace=np.nan, value=3.117)
+product_code	product_description	product_group	sales_date	price	sales_quantity	unit
+120	1102	orange	fruit	2021-11-01	2.600	37	kg
+121	1102	orange	fruit	2021-11-02	2.600	21	kg
+122	1102	orange	fruit	2021-11-03	2.600	35	kg
+123	1102	orange	fruit	2021-11-04	2.600	37	kg
+124	1102	orange	fruit	2021-11-05	2.600	36	kg
+125	1102	orange	fruit	2021-11-06	2.600	37	kg
+126	1102	orange	fruit	2021-11-07	2.600	29	kg
+127	1102	orange	fruit	2021-11-08	3.117	28	kg
+128	1102	orange	fruit	2021-11-09	2.600	31	kg
+129	1102	orange	fruit	2021-11-10	2.600	39	kg
+130	1102	orange	fruit	2021-11-11	2.600	32	kg
+131	1102	orange	fruit	2021-11-12	2.600	30	kg
+132	1102	orange	fruit	2021-11-13	2.600	26	kg
+133	1102	orange	fruit	2021-11-14	2.900	28	kg
+134	1102	orange	fruit	2021-11-15	2.900	23	kg
+135	1102	orange	fruit	2021-11-16	2.900	28	kg
+136	1102	orange	fruit	2021-11-17	2.900	29	kg
+137	1102	orange	fruit	2021-11-18	2.900	29	kg
+138	1102	orange	fruit	2021-11-19	2.900	26	kg
+139	1102	orange	fruit	2021-11-20	2.900	34	kg
+140	1102	orange	fruit	2021-11-21	2.900	28	kg
+141	1102	orange	fruit	2021-11-22	3.117	38	kg
+142	1102	orange	fruit	2021-11-23	2.700	30	kg
+143	1102	orange	fruit	2021-11-24	2.700	34	kg
+144	1102	orange	fruit	2021-11-25	2.700	29	kg
+145	1102	orange	fruit	2021-11-26	2.700	25	kg
+146	1102	orange	fruit	2021-11-27	2.700	28	kg
+147	1102	orange	fruit	2021-11-28	2.700	27	kg
+148	1102	orange	fruit	2021-11-29	2.700	21	kg
+149	1102	orange	fruit	2021-11-30	2.700	33	kg
+apple=df.loc[150:179]
+print(apple)
+     product_code product_description product_group  sales_date  price  \
+150          1103               apple         fruit  2021-11-01    1.9   
+151          1103               apple         fruit  2021-11-02    1.9   
+152          1103               apple         fruit  2021-11-03    1.9   
+153          1103               apple         fruit  2021-11-04    1.9   
+154          1103               apple         fruit  2021-11-05    NaN   
+155          1103               apple         fruit  2021-11-06    1.9   
+156          1103               apple         fruit  2021-11-07    1.9   
+157          1103               apple         fruit  2021-11-08    1.9   
+158          1103               apple         fruit  2021-11-09    1.9   
+159          1103               apple         fruit  2021-11-10    1.9   
+160          1103               apple         fruit  2021-11-11    NaN   
+161          1103               apple         fruit  2021-11-12    1.9   
+162          1103               apple         fruit  2021-11-13    1.9   
+163          1103               apple         fruit  2021-11-14    2.2   
+164          1103               apple         fruit  2021-11-15    2.2   
+165          1103               apple         fruit  2021-11-16    2.2   
+166          1103               apple         fruit  2021-11-17    2.2   
+167          1103               apple         fruit  2021-11-18    2.2   
+168          1103               apple         fruit  2021-11-19    2.2   
+169          1103               apple         fruit  2021-11-20    2.2   
+170          1103               apple         fruit  2021-11-21    2.2   
+171          1103               apple         fruit  2021-11-22    2.2   
+172          1103               apple         fruit  2021-11-23    2.2   
+173          1103               apple         fruit  2021-11-24    2.2   
+174          1103               apple         fruit  2021-11-25    2.2   
+175          1103               apple         fruit  2021-11-26    2.2   
+176          1103               apple         fruit  2021-11-27    NaN   
+177          1103               apple         fruit  2021-11-28    2.2   
+178          1103               apple         fruit  2021-11-29    2.2   
+179          1103               apple         fruit  2021-11-30    2.2   
+
+     sales_quantity unit  
+150              31   kg  
+151              29   kg  
+152              31   kg  
+153              31   kg  
+154              28   kg  
+155              39   kg  
+156              39   kg  
+157              22   kg  
+158              35   kg  
+159              31   kg  
+160              21   kg  
+161              30   kg  
+162              20   kg  
+163              31   kg  
+164              23   kg  
+165              24   kg  
+166              21   kg  
+167              28   kg  
+168              24   kg  
+169              34   kg  
+170              35   kg  
+171              35   kg  
+172              36   kg  
+173              20   kg  
+174              28   kg  
+175              24   kg  
+176              29   kg  
+177              37   kg  
+178              33   kg  
+179              29   kg  
+apple.replace(to_replace=np.nan, value=1.934)
+product_code	product_description	product_group	sales_date	price	sales_quantity	unit
+150	1103	apple	fruit	2021-11-01	1.900	31	kg
+151	1103	apple	fruit	2021-11-02	1.900	29	kg
+152	1103	apple	fruit	2021-11-03	1.900	31	kg
+153	1103	apple	fruit	2021-11-04	1.900	31	kg
+154	1103	apple	fruit	2021-11-05	1.934	28	kg
+155	1103	apple	fruit	2021-11-06	1.900	39	kg
+156	1103	apple	fruit	2021-11-07	1.900	39	kg
+157	1103	apple	fruit	2021-11-08	1.900	22	kg
+158	1103	apple	fruit	2021-11-09	1.900	35	kg
+159	1103	apple	fruit	2021-11-10	1.900	31	kg
+160	1103	apple	fruit	2021-11-11	1.934	21	kg
+161	1103	apple	fruit	2021-11-12	1.900	30	kg
+162	1103	apple	fruit	2021-11-13	1.900	20	kg
+163	1103	apple	fruit	2021-11-14	2.200	31	kg
+164	1103	apple	fruit	2021-11-15	2.200	23	kg
+165	1103	apple	fruit	2021-11-16	2.200	24	kg
+166	1103	apple	fruit	2021-11-17	2.200	21	kg
+167	1103	apple	fruit	2021-11-18	2.200	28	kg
+168	1103	apple	fruit	2021-11-19	2.200	24	kg
+169	1103	apple	fruit	2021-11-20	2.200	34	kg
+170	1103	apple	fruit	2021-11-21	2.200	35	kg
+171	1103	apple	fruit	2021-11-22	2.200	35	kg
+172	1103	apple	fruit	2021-11-23	2.200	36	kg
+173	1103	apple	fruit	2021-11-24	2.200	20	kg
+174	1103	apple	fruit	2021-11-25	2.200	28	kg
+175	1103	apple	fruit	2021-11-26	2.200	24	kg
+176	1103	apple	fruit	2021-11-27	1.934	29	kg
+177	1103	apple	fruit	2021-11-28	2.200	37	kg
+178	1103	apple	fruit	2021-11-29	2.200	33	kg
+179	1103	apple	fruit	2021-11-30	2.200	29	kg
+milk=df.loc[210:239]
+print(milk)
+     product_code product_description product_group  sales_date  price  \
+210          1201            milk-1.5         dairy  2021-11-01    5.9   
+211          1201            milk-1.5         dairy  2021-11-02    5.9   
+212          1201            milk-1.5         dairy  2021-11-03    5.9   
+213          1201            milk-1.5         dairy  2021-11-04    5.9   
+214          1201            milk-1.5         dairy  2021-11-05    5.9   
+215          1201            milk-1.5         dairy  2021-11-06    5.9   
+216          1201            milk-1.5         dairy  2021-11-07    5.9   
+217          1201            milk-1.5         dairy  2021-11-08    5.9   
+218          1201            milk-1.5         dairy  2021-11-09    5.9   
+219          1201            milk-1.5         dairy  2021-11-10    5.9   
+220          1201            milk-1.5         dairy  2021-11-11    5.9   
+221          1201            milk-1.5         dairy  2021-11-12    5.9   
+222          1201            milk-1.5         dairy  2021-11-13    5.9   
+223          1201            milk-1.5         dairy  2021-11-14    5.9   
+224          1201            milk-1.5         dairy  2021-11-15    NaN   
+225          1201            milk-1.5         dairy  2021-11-16    5.9   
+226          1201            milk-1.5         dairy  2021-11-17    5.9   
+227          1201            milk-1.5         dairy  2021-11-18    5.9   
+228          1201            milk-1.5         dairy  2021-11-19    5.9   
+229          1201            milk-1.5         dairy  2021-11-20    6.4   
+230          1201            milk-1.5         dairy  2021-11-21    NaN   
+231          1201            milk-1.5         dairy  2021-11-22    6.4   
+232          1201            milk-1.5         dairy  2021-11-23    6.4   
+233          1201            milk-1.5         dairy  2021-11-24    6.4   
+234          1201            milk-1.5         dairy  2021-11-25    6.4   
+235          1201            milk-1.5         dairy  2021-11-26    6.4   
+236          1201            milk-1.5         dairy  2021-11-27    6.4   
+237          1201            milk-1.5         dairy  2021-11-28    6.4   
+238          1201            milk-1.5         dairy  2021-11-29    6.4   
+239          1201            milk-1.5         dairy  2021-11-30    6.4   
+
+     sales_quantity unit  
+210              32  pcs  
+211              39  pcs  
+212              34  pcs  
+213              31  pcs  
+214              36  pcs  
+215              36  pcs  
+216              39  pcs  
+217              30  pcs  
+218              25  pcs  
+219              24  pcs  
+220              27  pcs  
+221              29  pcs  
+222              24  pcs  
+223              36  pcs  
+224              24  pcs  
+225              29  pcs  
+226              35  pcs  
+227              21  pcs  
+228              29  pcs  
+229              22  pcs  
+230              24  pcs  
+231              20  pcs  
+232              36  pcs  
+233              35  pcs  
+234              37  pcs  
+235              39  pcs  
+236              38  pcs  
+237              37  pcs  
+238              37  pcs  
+239              25  pcs  
+5.648
+milk.replace(to_replace=np.nan, value=5.648)
+product_code	product_description	product_group	sales_date	price	sales_quantity	unit
+210	1201	milk-1.5	dairy	2021-11-01	5.900	32	pcs
+211	1201	milk-1.5	dairy	2021-11-02	5.900	39	pcs
+212	1201	milk-1.5	dairy	2021-11-03	5.900	34	pcs
+213	1201	milk-1.5	dairy	2021-11-04	5.900	31	pcs
+214	1201	milk-1.5	dairy	2021-11-05	5.900	36	pcs
+215	1201	milk-1.5	dairy	2021-11-06	5.900	36	pcs
+216	1201	milk-1.5	dairy	2021-11-07	5.900	39	pcs
+217	1201	milk-1.5	dairy	2021-11-08	5.900	30	pcs
+218	1201	milk-1.5	dairy	2021-11-09	5.900	25	pcs
+219	1201	milk-1.5	dairy	2021-11-10	5.900	24	pcs
+220	1201	milk-1.5	dairy	2021-11-11	5.900	27	pcs
+221	1201	milk-1.5	dairy	2021-11-12	5.900	29	pcs
+222	1201	milk-1.5	dairy	2021-11-13	5.900	24	pcs
+223	1201	milk-1.5	dairy	2021-11-14	5.900	36	pcs
+224	1201	milk-1.5	dairy	2021-11-15	5.648	24	pcs
+225	1201	milk-1.5	dairy	2021-11-16	5.900	29	pcs
+226	1201	milk-1.5	dairy	2021-11-17	5.900	35	pcs
+227	1201	milk-1.5	dairy	2021-11-18	5.900	21	pcs
+228	1201	milk-1.5	dairy	2021-11-19	5.900	29	pcs
+229	1201	milk-1.5	dairy	2021-11-20	6.400	22	pcs
+230	1201	milk-1.5	dairy	2021-11-21	5.648	24	pcs
+231	1201	milk-1.5	dairy	2021-11-22	6.400	20	pcs
+232	1201	milk-1.5	dairy	2021-11-23	6.400	36	pcs
+233	1201	milk-1.5	dairy	2021-11-24	6.400	35	pcs
+234	1201	milk-1.5	dairy	2021-11-25	6.400	37	pcs
+235	1201	milk-1.5	dairy	2021-11-26	6.400	39	pcs
+236	1201	milk-1.5	dairy	2021-11-27	6.400	38	pcs
+237	1201	milk-1.5	dairy	2021-11-28	6.400	37	pcs
+238	1201	milk-1.5	dairy	2021-11-29	6.400	37	pcs
+239	1201	milk-1.5	dairy	2021-11-30	6.400	25	pcs
+yogurt
+yogurt=df.loc[240:269]
+print(yogurt)
+     product_code product_description product_group  sales_date  price  \
+240          1202            yogurt-1         dairy  2021-11-01    6.9   
+241          1202            yogurt-1         dairy  2021-11-02    6.9   
+242          1202            yogurt-1         dairy  2021-11-03    6.9   
+243          1202            yogurt-1         dairy  2021-11-04    6.9   
+244          1202            yogurt-1         dairy  2021-11-05    6.9   
+245          1202            yogurt-1         dairy  2021-11-06    6.9   
+246          1202            yogurt-1         dairy  2021-11-07    6.9   
+247          1202            yogurt-1         dairy  2021-11-08    6.9   
+248          1202            yogurt-1         dairy  2021-11-09    6.9   
+249          1202            yogurt-1         dairy  2021-11-10    6.9   
+250          1202            yogurt-1         dairy  2021-11-11    6.9   
+251          1202            yogurt-1         dairy  2021-11-12    6.9   
+252          1202            yogurt-1         dairy  2021-11-13    6.9   
+253          1202            yogurt-1         dairy  2021-11-14    6.9   
+254          1202            yogurt-1         dairy  2021-11-15    6.9   
+255          1202            yogurt-1         dairy  2021-11-16    6.9   
+256          1202            yogurt-1         dairy  2021-11-17    6.9   
+257          1202            yogurt-1         dairy  2021-11-18    5.9   
+258          1202            yogurt-1         dairy  2021-11-19    5.9   
+259          1202            yogurt-1         dairy  2021-11-20    5.9   
+260          1202            yogurt-1         dairy  2021-11-21    5.9   
+261          1202            yogurt-1         dairy  2021-11-22    5.9   
+262          1202            yogurt-1         dairy  2021-11-23    5.9   
+263          1202            yogurt-1         dairy  2021-11-24    NaN   
+264          1202            yogurt-1         dairy  2021-11-25    6.9   
+265          1202            yogurt-1         dairy  2021-11-26    6.9   
+266          1202            yogurt-1         dairy  2021-11-27    6.9   
+267          1202            yogurt-1         dairy  2021-11-28    6.9   
+268          1202            yogurt-1         dairy  2021-11-29    6.9   
+269          1202            yogurt-1         dairy  2021-11-30    6.9   
+
+     sales_quantity unit  
+240              26  pcs  
+241              36  pcs  
+242              30  pcs  
+243              29  pcs  
+244              20  pcs  
+245              21  pcs  
+246              34  pcs  
+247              25  pcs  
+248              38  pcs  
+249              38  pcs  
+250              31  pcs  
+251              26  pcs  
+252              32  pcs  
+253              22  pcs  
+254              32  pcs  
+255              37  pcs  
+256              39  pcs  
+257              21  pcs  
+258              38  pcs  
+259              20  pcs  
+260              28  pcs  
+261              26  pcs  
+262              39  pcs  
+263              29  pcs  
+264              24  pcs  
+265              28  pcs  
+266              23  pcs  
+267              22  pcs  
+268              31  pcs  
+269              37  pcs  
+6.69
+yogurt.replace(to_replace=np.nan, value=6.69)
+product_code	product_description	product_group	sales_date	price	sales_quantity	unit
+240	1202	yogurt-1	dairy	2021-11-01	6.90	26	pcs
+241	1202	yogurt-1	dairy	2021-11-02	6.90	36	pcs
+242	1202	yogurt-1	dairy	2021-11-03	6.90	30	pcs
+243	1202	yogurt-1	dairy	2021-11-04	6.90	29	pcs
+244	1202	yogurt-1	dairy	2021-11-05	6.90	20	pcs
+245	1202	yogurt-1	dairy	2021-11-06	6.90	21	pcs
+246	1202	yogurt-1	dairy	2021-11-07	6.90	34	pcs
+247	1202	yogurt-1	dairy	2021-11-08	6.90	25	pcs
+248	1202	yogurt-1	dairy	2021-11-09	6.90	38	pcs
+249	1202	yogurt-1	dairy	2021-11-10	6.90	38	pcs
+250	1202	yogurt-1	dairy	2021-11-11	6.90	31	pcs
+251	1202	yogurt-1	dairy	2021-11-12	6.90	26	pcs
+252	1202	yogurt-1	dairy	2021-11-13	6.90	32	pcs
+253	1202	yogurt-1	dairy	2021-11-14	6.90	22	pcs
+254	1202	yogurt-1	dairy	2021-11-15	6.90	32	pcs
+255	1202	yogurt-1	dairy	2021-11-16	6.90	37	pcs
+256	1202	yogurt-1	dairy	2021-11-17	6.90	39	pcs
+257	1202	yogurt-1	dairy	2021-11-18	5.90	21	pcs
+258	1202	yogurt-1	dairy	2021-11-19	5.90	38	pcs
+259	1202	yogurt-1	dairy	2021-11-20	5.90	20	pcs
+260	1202	yogurt-1	dairy	2021-11-21	5.90	28	pcs
+261	1202	yogurt-1	dairy	2021-11-22	5.90	26	pcs
+262	1202	yogurt-1	dairy	2021-11-23	5.90	39	pcs
+263	1202	yogurt-1	dairy	2021-11-24	6.69	29	pcs
+264	1202	yogurt-1	dairy	2021-11-25	6.90	24	pcs
+265	1202	yogurt-1	dairy	2021-11-26	6.90	28	pcs
+266	1202	yogurt-1	dairy	2021-11-27	6.90	23	pcs
+267	1202	yogurt-1	dairy	2021-11-28	6.90	22	pcs
+268	1202	yogurt-1	dairy	2021-11-29	6.90	31	pcs
+269	1202	yogurt-1	dairy	2021-11-30	6.90	37	pcs
+butter=df.loc[270:299]
+print(butter)
+     product_code product_description product_group  sales_date  price  \
+270          1203         butter-0.25         dairy  2021-11-01   11.9   
+271          1203         butter-0.25         dairy  2021-11-02   11.9   
+272          1203         butter-0.25         dairy  2021-11-03   11.9   
+273          1203         butter-0.25         dairy  2021-11-04   11.9   
+274          1203         butter-0.25         dairy  2021-11-05   11.9   
+275          1203         butter-0.25         dairy  2021-11-06   11.9   
+276          1203         butter-0.25         dairy  2021-11-07   10.9   
+277          1203         butter-0.25         dairy  2021-11-08   10.9   
+278          1203         butter-0.25         dairy  2021-11-09   10.9   
+279          1203         butter-0.25         dairy  2021-11-10    NaN   
+280          1203         butter-0.25         dairy  2021-11-11   10.9   
+281          1203         butter-0.25         dairy  2021-11-12   10.9   
+282          1203         butter-0.25         dairy  2021-11-13   10.9   
+283          1203         butter-0.25         dairy  2021-11-14   10.9   
+284          1203         butter-0.25         dairy  2021-11-15   10.9   
+285          1203         butter-0.25         dairy  2021-11-16    NaN   
+286          1203         butter-0.25         dairy  2021-11-17   10.9   
+287          1203         butter-0.25         dairy  2021-11-18   10.9   
+288          1203         butter-0.25         dairy  2021-11-19   10.9   
+289          1203         butter-0.25         dairy  2021-11-20   10.9   
+290          1203         butter-0.25         dairy  2021-11-21   10.9   
+291          1203         butter-0.25         dairy  2021-11-22   10.9   
+292          1203         butter-0.25         dairy  2021-11-23   11.9   
+293          1203         butter-0.25         dairy  2021-11-24   11.9   
+294          1203         butter-0.25         dairy  2021-11-25   11.9   
+295          1203         butter-0.25         dairy  2021-11-26   11.9   
+296          1203         butter-0.25         dairy  2021-11-27   11.9   
+297          1203         butter-0.25         dairy  2021-11-28   11.9   
+298          1203         butter-0.25         dairy  2021-11-29   11.9   
+299          1203         butter-0.25         dairy  2021-11-30   11.9   
+
+     sales_quantity unit  
+270              22  pcs  
+271              34  pcs  
+272              26  pcs  
+273              39  pcs  
+274              27  pcs  
+275              26  pcs  
+276              33  pcs  
+277              23  pcs  
+278              22  pcs  
+279              34  pcs  
+280              21  pcs  
+281              23  pcs  
+282              20  pcs  
+283              27  pcs  
+284              33  pcs  
+285              32  pcs  
+286              22  pcs  
+287              29  pcs  
+288              36  pcs  
+289              21  pcs  
+290              25  pcs  
+291              25  pcs  
+292              20  pcs  
+293              26  pcs  
+294              31  pcs  
+295              31  pcs  
+296              29  pcs  
+297              37  pcs  
+298              34  pcs  
+299              36  pcs  
+11.38
+butter.replace(to_replace=np.nan, value=11.38)
+product_code	product_description	product_group	sales_date	price	sales_quantity	unit
+270	1203	butter-0.25	dairy	2021-11-01	11.90	22	pcs
+271	1203	butter-0.25	dairy	2021-11-02	11.90	34	pcs
+272	1203	butter-0.25	dairy	2021-11-03	11.90	26	pcs
+273	1203	butter-0.25	dairy	2021-11-04	11.90	39	pcs
+274	1203	butter-0.25	dairy	2021-11-05	11.90	27	pcs
+275	1203	butter-0.25	dairy	2021-11-06	11.90	26	pcs
+276	1203	butter-0.25	dairy	2021-11-07	10.90	33	pcs
+277	1203	butter-0.25	dairy	2021-11-08	10.90	23	pcs
+278	1203	butter-0.25	dairy	2021-11-09	10.90	22	pcs
+279	1203	butter-0.25	dairy	2021-11-10	11.38	34	pcs
+280	1203	butter-0.25	dairy	2021-11-11	10.90	21	pcs
+281	1203	butter-0.25	dairy	2021-11-12	10.90	23	pcs
+282	1203	butter-0.25	dairy	2021-11-13	10.90	20	pcs
+283	1203	butter-0.25	dairy	2021-11-14	10.90	27	pcs
+284	1203	butter-0.25	dairy	2021-11-15	10.90	33	pcs
+285	1203	butter-0.25	dairy	2021-11-16	11.38	32	pcs
+286	1203	butter-0.25	dairy	2021-11-17	10.90	22	pcs
+287	1203	butter-0.25	dairy	2021-11-18	10.90	29	pcs
+288	1203	butter-0.25	dairy	2021-11-19	10.90	36	pcs
+289	1203	butter-0.25	dairy	2021-11-20	10.90	21	pcs
+290	1203	butter-0.25	dairy	2021-11-21	10.90	25	pcs
+291	1203	butter-0.25	dairy	2021-11-22	10.90	25	pcs
+292	1203	butter-0.25	dairy	2021-11-23	11.90	20	pcs
+293	1203	butter-0.25	dairy	2021-11-24	11.90	26	pcs
+294	1203	butter-0.25	dairy	2021-11-25	11.90	31	pcs
+295	1203	butter-0.25	dairy	2021-11-26	11.90	31	pcs
+296	1203	butter-0.25	dairy	2021-11-27	11.90	29	pcs
+297	1203	butter-0.25	dairy	2021-11-28	11.90	37	pcs
+298	1203	butter-0.25	dairy	2021-11-29	11.90	34	pcs
+299	1203	butter-0.25	dairy	2021-11-30	11.90	36	pcs
